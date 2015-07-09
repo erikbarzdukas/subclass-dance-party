@@ -28,8 +28,37 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+
+  });
+  
+  $(".acid").on("click", function(event){ 
+    var move = function(){ 
+      var spans = $('span'); 
+      console.log(spans);
+      for (var i=0;i<spans.length; i++){
+        if(spans[i].className.toString() !== 'title'){
+          $('.' + spans[i].className.toString()).animate({ 
+            width: $("body").width() * Math.random(),
+            height: $("body").height() * Math.random() 
+          }, 8000);
+        } 
+      }
+    };
+    var acidColors = function(){
+      var filterVar = 'invert(100%)';
+      var spans = $('span'); 
+     // for (var i=0;i<spans.length; i++){
+      //  if(spans[i].className.toString() !== 'title'){
+          $(document.documentElement).css({'-webkit-filter':filterVar});
+        //}   
+      //}
+    }
+    acidColors();
+    move();
+
   });
 
+    
   $(".addBlinkyDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -115,6 +144,7 @@ $(".addTinaDancerButton").on("click", function(event){
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+
   });
   
 $(".lineupButton").on("click", function(event){
