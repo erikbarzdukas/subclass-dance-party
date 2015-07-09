@@ -32,7 +32,7 @@ $(document).ready(function(){
   });
   
   $(".acid").on("click", function(event){ 
-    $('audio').attr('src', 'whiteRabbit.mp3');
+    $('audio').attr('src', 'whiteRabbit.m4a');
     var move = function(){ 
       var spans = $('span'); 
       console.log(spans);
