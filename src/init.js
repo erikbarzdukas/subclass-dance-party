@@ -32,6 +32,7 @@ $(document).ready(function(){
   });
   
   $(".acid").on("click", function(event){ 
+    $('audio').attr('src', 'whiteRabbit.mp3');
     var move = function(){ 
       var spans = $('span'); 
       console.log(spans);
