@@ -107,6 +107,7 @@ $(".addBobDancerButton").on("click", function(event){
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
     // make a dancer with a random position
+    
 
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
@@ -114,7 +115,32 @@ $(".addBobDancerButton").on("click", function(event){
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+    $('.addBobDancerButton').remove();
     window.dancers.push(dancer);
+    
+    var floatBob = function(){
+      
+      dancer.$node.animate({ 
+          top: window.dancers[0].top,
+          left: window.dancers[0].left,
+      }, 500)
+      setTimeout(function(){
+      window.dancers[0].collision();
+      window.dancers.shift();
+      if(window.dancers.length === 1){
+        alert("No dancing in the restaurant!!!!");
+        location.reload();
+      }
+     }, 500);
+
+    }
+    
+    floatBob();
+    setInterval(floatBob, 1000);
+
+    //setInterval(collisionHandle, 1);
+
   });
 
 $(".addTinaDancerButton").on("click", function(event){
@@ -156,4 +182,6 @@ $(".lineupButton").on("click", function(event){
 })
 
 });
+
+$('.bobdancer').on()
 

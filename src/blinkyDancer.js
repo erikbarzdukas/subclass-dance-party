@@ -17,11 +17,13 @@ var BobDancer = function(top, left, timeBetweenSteps){
 
   this.$node = $('<span class="bobdancer"></span>');
   Dancer.prototype.setPosition.call(this, top, left);
-
 }
 
 BobDancer.prototype = Object.create(Dancer.prototype);
 BobDancer.prototype.constructor = BobDancer;
+BobDancer.prototype.collision = function(){
+  console.log('Tried to remove bob');
+};
 
 var TinaDancer = function(top, left, timeBetweenSteps){
   Dancer.apply(this, arguments);
