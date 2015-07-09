@@ -33,3 +33,12 @@ var TinaDancer = function(top, left, timeBetweenSteps){
 }
 TinaDancer.prototype = Object.create(Dancer.prototype);
 TinaDancer.prototype.constructor = TinaDancer;
+
+var GeneDancer = function(top, left, timeBetweenSteps){
+  Dancer.apply(this, arguments);
+
+  this.$node = $('<span class="genedancer"></span>');
+  Dancer.prototype.setPosition.call(this, top, left);
+}
+GeneDancer.prototype = Object.create(Dancer.prototype);
+GeneDancer.prototype.constructor = GeneDancer;
