@@ -35,7 +35,6 @@ $(document).ready(function(){
     $('audio').attr('src', 'whiteRabbit.m4a');
     var move = function(){ 
       var spans = $('span'); 
-      console.log(spans);
       for (var i=0;i<spans.length; i++){
         if(spans[i].className.toString() !== 'title'){
           $('.' + spans[i].className.toString()).animate({ 
@@ -48,15 +47,17 @@ $(document).ready(function(){
     var acidColors = function(){
       var filterVar = 'invert(100%)';
       var spans = $('span'); 
-     // for (var i=0;i<spans.length; i++){
-      //  if(spans[i].className.toString() !== 'title'){
-          $(document.documentElement).css({'-webkit-filter':filterVar});
-        //}   
-      //}
+      $(document.documentElement).css({'-webkit-filter':filterVar});
     }
+
+     setInterval(function(){ 
+      var filterNum = Math.random() * 360;
+      var filterVar = 'hue-rotate(' + filterNum.toString() + 'deg)'
+      $(document.documentElement).css({'-webkit-filter':filterVar})
+    }, 2000);
+
     acidColors();
     move();
-
   });
 
     

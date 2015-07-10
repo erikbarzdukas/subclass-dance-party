@@ -14,26 +14,32 @@ body{
   height:100%;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: black;
 }
-.title{
-  padding:5px 12px;
-  float:right;
-} 
 .addDancerButton, .button{
   appearance: button;
   -moz-appearance: button;
   -webkit-appearance: button;
   text-decoration: none; font: menu; color: ButtonText;
   display: inline-block; padding: 2px 8px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .topbar{
-  height:32px;
-  background-color: #555;
+  height: 32px;
+  background-color: #030303;
 }
+
 .title{
-  background-color: #777;
+  background-color: #FFF;
+  font-family: 'BobsBurgers';
+  font-size: 50px;
+  border-radius: 25px;
+  padding: 10px 10px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 .dancer{
   content: url('bu.png');
@@ -58,4 +64,12 @@ body, a:link, a:visited, a:active{
   max-width: 100%;
   height: auto;
   position:absolute;
+}
+
+@font-face {
+  font-family: 'BobsBurgers';
+  src: url('fonts/BobsBurgers.eot');
+  src: local('☺'), url('fonts/BobsBurgers.woff') format('woff'), url('fonts/BobsBurgers.ttf') format('truetype'), url('fonts/BobsBurgers.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

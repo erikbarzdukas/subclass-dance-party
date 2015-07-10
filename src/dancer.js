@@ -21,5 +21,4 @@ Dancer.prototype.setPosition = function(top,left){
 
 Dancer.prototype.collision = function(){ 
   this.$node.remove();
-  console.log('Removed ' + this);
 };

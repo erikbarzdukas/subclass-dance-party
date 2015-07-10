@@ -21,9 +21,7 @@ var BobDancer = function(top, left, timeBetweenSteps){
 
 BobDancer.prototype = Object.create(Dancer.prototype);
 BobDancer.prototype.constructor = BobDancer;
-BobDancer.prototype.collision = function(){
-  console.log('Tried to remove bob');
-};
+BobDancer.prototype.collision = function(){};
 
 var TinaDancer = function(top, left, timeBetweenSteps){
   Dancer.apply(this, arguments);
